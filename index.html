@@ -90,68 +90,6 @@
             margin-top: 10px;
             text-shadow: 0 0 10px #00ffcc;
         }
-
-        .chatbox {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 600px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ffcc;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
-            padding: 20px;
-        }
-
-        .chat-messages {
-            max-height: 200px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            color: #00ffcc;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 10px;
-        }
-
-        .chat-input input {
-            flex: 1;
-            padding: 10px;
-            font-size: 1em;
-            border-radius: 5px;
-            border: 2px solid #00ffcc;
-            background: black;
-            color: #00ffcc;
-        }
-
-        .chat-input button {
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 5px;
-            border: 2px solid #00ffcc;
-            background: #00ffcc;
-            color: black;
-            cursor: pointer;
-        }
-
-        .chat-input button:hover {
-            background: #00cc99;
-        }
-
-        .message {
-            margin: 5px 0;
-        }
-
-        .user-message {
-            color: #ffffff;
-        }
-
-        .joy-response {
-            color: #00ffcc;
-        }
     </style>
 </head>
 <body>
@@ -162,49 +100,6 @@
             <h1 class="greeting">Hello, I'm Joy, your AI Nurse for the boys in the trenches.</h1>
             <p class="description">Here to bring you happiness and help with whatever you need!</p>
         </div>
-        <div class="chatbox">
-            <div class="chat-messages" id="chatMessages"></div>
-            <div class="chat-input">
-                <input type="text" id="userInput" placeholder="Type your message here...">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
     </div>
-    <script>
-        const responses = [
-            "This meme coin is going to the moon! 🚀",
-            "Diamond hands only! 💎🙌",
-            "HODL tight, we're just getting started! 🔥",
-            "Bullish vibes detected! 📈",
-            "This launch is going to be legendary! 🌟",
-            "Get ready to ride the rocket! 🚀💸",
-            "Don't miss this opportunity to be part of history! 🚀🔥"
-        ];
-
-        function sendMessage() {
-            const userInput = document.getElementById('userInput');
-            const chatMessages = document.getElementById('chatMessages');
-
-            if (userInput.value.trim() === "") return;
-
-            // Add user message
-            const userMessage = document.createElement('div');
-            userMessage.className = 'message user-message';
-            userMessage.textContent = userInput.value;
-            chatMessages.appendChild(userMessage);
-
-            // Generate Joy's response
-            const joyResponse = document.createElement('div');
-            joyResponse.className = 'message joy-response';
-            joyResponse.textContent = responses[Math.floor(Math.random() * responses.length)];
-            chatMessages.appendChild(joyResponse);
-
-            // Scroll to the bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            // Clear input
-            userInput.value = "";
-        }
-    </script>
 </body>
 </html>
