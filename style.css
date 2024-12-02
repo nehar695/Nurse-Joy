@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.joy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffcc00, #ff6699);
+    z-index: 1;
+    animation: joyBackgroundAnimation 4s ease-in-out infinite;
+}
+
+@keyframes joyBackgroundAnimation {
+    0% { background: linear-gradient(135deg, #ffcc00, #ff6699); }
+    50% { background: linear-gradient(135deg, #ff6699, #ffcc00); }
+    100% { background: linear-gradient(135deg, #ffcc00, #ff6699); }
+}
+
+.ai-joy {
+    text-align: center;
+    z-index: 10;
+    color: #fff;
+    position: relative;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    width: 100%;
+}
+
+.joy-image {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+}
+
+.greeting {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #ffcc00, 0 0 15px #ff6699;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #fff;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6699;
+}
