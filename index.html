@@ -4,7 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joy - Your AI Assistant</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;  /* Matrix background */
+            color: #00ffcc;  /* Cyan color */
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+
+        /* Container for everything */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        /* Matrix background rain animation */
+        .matrix-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 1;
+            animation: matrixRain 2s infinite linear;
+        }
+
+        /* Animation for flowing Matrix rain effect */
+        @keyframes matrixRain {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Simulating the Matrix "code rain" effect */
+        .matrix-background {
+            background: repeating-linear-gradient(45deg, rgba(0, 255, 204, 0.2) 0%, rgba(0, 255, 204, 0.4) 1px, rgba(0, 255, 204, 0.2) 2px, transparent 2px) repeat, 
+                        repeating-linear-gradient(90deg, rgba(0, 255, 204, 0.2) 0%, rgba(0, 255, 204, 0.4) 2px, rgba(0, 255, 204, 0.2) 4px, transparent 4px) repeat;
+            background-size: 50px 50px;
+            animation: moveMatrix 0.5s linear infinite;
+        }
+
+        /* Animation to simulate the code rain movement */
+        @keyframes moveMatrix {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Styling the AI content */
+        .ai-joy {
+            z-index: 10;
+            text-align: center;
+            color: #00ffcc;  /* Cyan color for the text */
+            position: relative;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.8);  /* Glowing effect */
+            background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background */
+            backdrop-filter: blur(10px);  /* Blurring effect behind the content */
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Centering the image */
+        .joy-image {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #00ffcc;  /* Cyan border */
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.8);  /* Glowing effect */
+            margin: 20px auto;  /* Center the image */
+            display: block;
+        }
+
+        /* Glowing text effect for the greeting */
+        .greeting {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 0 0 15px #00ffcc;  /* Cyan glow */
+        }
+
+        /* Description text styling */
+        .description {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 0 0 10px #00ffcc;  /* Cyan glow */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
